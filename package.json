@@ -61,3 +61,10 @@
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
+{
+  "scripts": {
+    "build:css": "rtlcss -c .rtlcssrc.json themes/original/css/theme.css && rtlcss -c .rtlcssrc.json themes/metro/css/theme.css && rtlcss -c .rtlcssrc.json themes/metro/css/blueeyes-theme.css && rtlcss -c .rtlcssrc.json themes/metro/css/mono-theme.css && rtlcss -c .rtlcssrc.json themes/metro/css/redmond-theme.css && rtlcss -c .rtlcssrc.json themes/metro/css/teal-theme.css",
+    "build:js": "babel js/src -d js/dist",
+    "build": "npm run build:css && npm run build:js && mkdir -p public/js public/themes && cp -R js/dist public/js && cp -R themes public && cp -f index.html public/index.html"
+  }
+}
